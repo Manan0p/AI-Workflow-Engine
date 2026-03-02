@@ -165,6 +165,40 @@ export default function Home() {
               <code>{workflowId}</code>
             </div>
           )}
+
+          {/* 🔥 FINAL RESULT NOW ON LEFT */}
+          {finalResult && (
+            <div
+              style={{
+                marginTop: "25px",
+                padding: "20px",
+                backgroundColor: "#000",
+                borderRadius: "12px",
+                border: "1px solid #333",
+              }}
+            >
+              <h3 style={{ marginBottom: "10px" }}>Final Result</h3>
+
+              {finalResult.score && (
+                <p>
+                  <strong>Score:</strong> {finalResult.score}
+                </p>
+              )}
+
+              {finalResult.feedback && (
+                <p>
+                  <strong>Feedback:</strong> {finalResult.feedback}
+                </p>
+              )}
+
+              {finalResult.email_sent !== undefined && (
+                <p>
+                  <strong>Email Sent:</strong>{" "}
+                  {finalResult.email_sent ? "Yes" : "No"}
+                </p>
+              )}
+            </div>
+          )}
         </div>
 
         {/* 🔹 RIGHT PANEL */}
@@ -230,40 +264,6 @@ export default function Home() {
               )}
             </div>
           ))}
-
-          {/* 🔥 FINAL RESULT */}
-          {finalResult && (
-            <div
-              style={{
-                marginTop: "30px",
-                padding: "20px",
-                backgroundColor: "#000",
-                borderRadius: "12px",
-                border: "1px solid #333",
-              }}
-            >
-              <h3>Final Result</h3>
-
-              {finalResult.score && (
-                <p>
-                  <strong>Score:</strong> {finalResult.score}
-                </p>
-              )}
-
-              {finalResult.feedback && (
-                <p>
-                  <strong>Feedback:</strong> {finalResult.feedback}
-                </p>
-              )}
-
-              {finalResult.email_sent !== undefined && (
-                <p>
-                  <strong>Email Sent:</strong>{" "}
-                  {finalResult.email_sent ? "Yes" : "No"}
-                </p>
-              )}
-            </div>
-          )}
         </div>
       </div>
     </div>
